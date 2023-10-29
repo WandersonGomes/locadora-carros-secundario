@@ -4,9 +4,13 @@ const { engine } = require('express-handlebars');
 const app = express();
 const port = process.env.PORT || 3000;
 
+//EXPRESS-HANDLEBARS
 app.engine('.hbs', engine({extname: '.hbs'}));
 app.set('view engine', '.hbs');
 app.set('views', './views');
+
+//PUBLIC DIRECTORY
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.render('home');
