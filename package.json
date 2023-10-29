@@ -1,0 +1,25 @@
+{
+  "name": "locadora-carros-secundario",
+  "version": "1.0.0",
+  "description": "Sistema online de locação de carros.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WandersonGomes/locadora-carros-secundario.git"
+  },
+  "keywords": [
+    "sistema",
+    "online",
+    "locadora",
+    "carros"
+  ],
+  "author": "Wanderson Gomes da Costa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WandersonGomes/locadora-carros-secundario/issues"
+  },
+  "homepage": "https://github.com/WandersonGomes/locadora-carros-secundario#readme"
+}
