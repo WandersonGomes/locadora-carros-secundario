@@ -13,7 +13,13 @@ app.set('views', './views');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.render('home');
+    const config_page_login = {
+        title: 'Login',
+        styles: [
+            '/css/login.css'
+        ]
+    }
+    res.render('login', config_page_login);
 });
 
 app.listen(port, () => {
