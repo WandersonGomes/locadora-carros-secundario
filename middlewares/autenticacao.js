@@ -4,18 +4,18 @@ const isAdmin = (req, res, next) => {
     try {
         if (!req.session.user) {
             config_login_page.msg_error = 'Acesso não autorizado!';
-            res.redirect('/admin/login');
+            return res.redirect('/auth/login');
         } else {
-            if (!req.session.user.perfil === 'administrator') {
+            if (req.session.user.perfil === 'administrato') {
                 return next();   
             } else {
                 config_login_page.msg_error = 'Acesso não autorizado!';
-                res.redirect('/admin/login');
+                return res.redirect('/auth/login');
             }
         }
     } catch (err) {
         config_login_page.msg_error = 'Error no servidor!';
-        res.redirect('/admin/login');
+        return res.redirect('/auth/login');
     }
 }
 

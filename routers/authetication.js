@@ -15,12 +15,12 @@ router.post('/auth', async (req, res) => {
 
     if (!username) {
         config_login_page.msg_error = 'Usuário não informado!';
-        res.redirect('/admin/login');
+        res.redirect('/auth/login');
     }
 
     if (!password) {
         config_login_page.msg_error = 'Senha não informada!';
-        res.redirect('/admin/login');
+        res.redirect('/auth/login');
     }
 
     try {
@@ -28,23 +28,21 @@ router.post('/auth', async (req, res) => {
 
         if (!user) {
             config_login_page.msg_error = 'Usuário não encontrado!';
-            res.redirect('/admin/login');
+            res.redirect('/auth/login');
         } else {
             const comparePassword = await bcrypt.compare(password, user.password);
-            console.log(comparePassword);
 
             if (!comparePassword) {
                 config_login_page.msg_error = 'Credenciais inválidas!';
-                res.redirect('/admin/login');
+                res.redirect('/auth/login');
             } else {
                 req.session.user = { id: user.id, username: user.username, perfil: user.perfil };
-                
                 res.redirect('/admin/dashboard');
             }
         }
     } catch (error) {
         config_login_page.msg_error = 'Error no servidor!';
-        res.redirect('/admin/login');
+        res.redirect('/auth/login');
     }
 });
 
@@ -61,7 +59,7 @@ router.get('/logout', (req, res) => {
         config_login_page.msg_error = 'Usuário não logado!';
     }
 
-    res.redirect('/admin/login');
+    res.redirect('/auth/login');
 });
 
 module.exports = router;
