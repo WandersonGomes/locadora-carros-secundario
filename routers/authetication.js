@@ -31,12 +31,14 @@ router.post('/auth', async (req, res) => {
             res.redirect('/admin/login');
         } else {
             const comparePassword = await bcrypt.compare(password, user.password);
-            
+            console.log(comparePassword);
+
             if (!comparePassword) {
                 config_login_page.msg_error = 'Credenciais inválidas!';
                 res.redirect('/admin/login');
             } else {
                 req.session.user = { id: user.id, username: user.username, perfil: user.perfil };
+                
                 res.redirect('/admin/dashboard');
             }
         }
@@ -46,8 +48,20 @@ router.post('/auth', async (req, res) => {
     }
 });
 
-router.get('/admin/dashboard', (req, res) => {
-    console.log(req.session.user);
+router.get('/logout', (req, res) => {
+    if (req.session) {
+        req.session.destroy((err) => {
+            if (err) {
+                config_login_page.msg_error = 'Erro no seu logout!';
+            } else {
+                config_login_page.msg_success = 'Logout realizado com sucesso!';
+            }
+        });
+    } else {
+        config_login_page.msg_error = 'Usuário não logado!';
+    }
+
+    res.redirect('/admin/login');
 });
 
 module.exports = router;

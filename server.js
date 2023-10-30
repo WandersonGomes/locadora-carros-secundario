@@ -11,11 +11,11 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-//ROUTERS
-app.use('/admin', routerAuthentication);
-
 //EXPRESS-SESSION
 app.use(session(config_session));
+
+//ROUTERS
+app.use('/admin', routerAuthentication);
 
 //EXPRESS-HANDLEBARS
 app.engine('.hbs', engine({extname: '.hbs'}));
