@@ -5,7 +5,10 @@ const router = express.Router();
 
 const { config_login_page } = require('../config/pages');
 
-router.get('/login', (req, res) => {    
+router.get('/login', (req, res) => {
+    if (!config_login_page.msg_error)    
+        config_login_page.msg_error = req.flash('error');
+
     res.render('login', config_login_page);
     config_login_page.clearMessages();
 });
