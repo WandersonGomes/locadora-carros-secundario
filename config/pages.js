@@ -12,8 +12,8 @@ class ConfigurationPage {
     }
 }
 
-const styles_css = [ '/css/login.css' ];
-const config_login_page = new ConfigurationPage('Login', styles_css);
+const login_page_styles_css = [ '/css/login.css' ];
+const config_login_page = new ConfigurationPage('Login', login_page_styles_css);
 
 module.exports = {
     config_login_page,
