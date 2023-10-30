@@ -33,10 +33,10 @@ router.post('/auth', async (req, res) => {
             const comparePassword = await bcrypt.compare(password, user.password);
             
             if (!comparePassword) {
-                config_login_page.msg_error = 'Credenciais erradas!';
+                config_login_page.msg_error = 'Credenciais inválidas!';
                 res.redirect('/admin/login');
             } else {
-                
+
             }
         }
     } catch (error) {
