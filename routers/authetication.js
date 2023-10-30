@@ -36,13 +36,18 @@ router.post('/auth', async (req, res) => {
                 config_login_page.msg_error = 'Credenciais inválidas!';
                 res.redirect('/admin/login');
             } else {
-
+                req.session.user = { id: user.id, username: user.username, perfil: user.perfil };
+                res.redirect('/admin/dashboard');
             }
         }
     } catch (error) {
         config_login_page.msg_error = 'Error no servidor!';
         res.redirect('/admin/login');
     }
+});
+
+router.get('/admin/dashboard', (req, res) => {
+    console.log(req.session.user);
 });
 
 module.exports = router;
