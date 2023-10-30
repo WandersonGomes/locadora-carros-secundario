@@ -1,0 +1,2 @@
+# criando o model User
+npx sequelize-cli model:generate --name User --attributes username:STRING,password:STRING,perfil:enum:'{administrador, cliente}'
