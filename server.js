@@ -6,6 +6,7 @@ const { engine } = require('express-handlebars');
 
 const routerAuthentication = require('./routers/authetication');
 const routerDashboard = require('./routers/admin');
+const routerCustomers = require('./routers/customers');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -23,6 +24,7 @@ app.use(session(config_session));
 //ROUTERS
 app.use('/auth', routerAuthentication);
 app.use('/admin', routerDashboard);
+app.use('/admin', routerCustomers);
 
 //EXPRESS-HANDLEBARS
 app.engine('.hbs', engine({extname: '.hbs'}));
