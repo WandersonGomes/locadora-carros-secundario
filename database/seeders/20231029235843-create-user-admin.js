@@ -8,15 +8,7 @@ const SALT = 10;
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
+
     await queryInterface.bulkInsert('Users', [{
       username: 'admin',
       password: await bcrypt.hash('admin', config_bcrypt.saltRounds),
