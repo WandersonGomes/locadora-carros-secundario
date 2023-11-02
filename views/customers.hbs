@@ -15,19 +15,19 @@
         </tr>
       </thead>
       <tbody>
-        <!--Modelo
+        {{#each customers}}
         <tr>
-          <td>1</td>
-          <td>Wanderson</td>
-          <td>Gomes da Costa</td>
-          <td>000.000.000-00</td>
+          <td>{{this.id}}</td>
+          <td>{{this.name}}</td>
+          <td>{{this.lastName}}</td>
+          <td>{{this.cpf}}</td>
           <td>
             <button type="button" class="btn btn-warning">Editar</button>
             <button type="button" class="btn btn-danger">Deletar</button>
             <button type="button" class="btn btn-primary">Visualizar</button>
           </td>
         </tr>
-      -->
+      {{/each}}
     </tbody>
   </table>
 </main>
