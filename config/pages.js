@@ -1,7 +1,8 @@
 class ConfigurationPage {
-    constructor(title, styles) {
+    constructor(title, styles, scripts) {
         this.title = title;
         this.styles = styles;
+        this.scripts = scripts;
         this.msg_error = undefined;
         this.msg_success = undefined;
     }
@@ -18,7 +19,8 @@ const config_login_page = new ConfigurationPage('Login', login_page_styles_css);
 const dashboard_page_styles_css = [ '/css/dashboard.css' ];
 const config_dashboard_page = new ConfigurationPage('Dashboard', dashboard_page_styles_css);
 
-const config_customers_page = new ConfigurationPage('Customers');
+const customers_page_scripts = [ '/js/customers.js' ];
+const config_customers_page = new ConfigurationPage('Customers', undefined, customers_page_scripts);
 
 const config_about_page = new ConfigurationPage('About');
 

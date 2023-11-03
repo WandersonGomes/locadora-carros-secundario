@@ -22,5 +22,10 @@
 
     <!--BOOTSTRAP JS-->
     <script src="/bootstrap/js/bootstrap.min.js"></script>
+
+    <!--JAVASCRIPT CUSTOM-->
+    {{#each scripts}}
+        <script src="{{this}}"></script>
+    {{/each}}
 </body>
 </html>

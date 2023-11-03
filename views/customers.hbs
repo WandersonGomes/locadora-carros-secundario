@@ -1,4 +1,16 @@
 {{> menu}}
+{{#if msg_error}}
+  <div class="alert alert-danger container">
+    {{msg_error}}
+  </div>
+{{/if}}
+
+{{#if msg_success}}
+  <div class="alert alert-success container">
+    {{msg_success}}
+  </div>
+{{/if}}
+
 <main class="container">
     <h1 class="text-center pt-2">Clientes</h1>
     <div class="d-flex justify-content-end mb-3">
@@ -23,7 +35,7 @@
           <td>{{this.cpf}}</td>
           <td>
             <button type="button" class="btn btn-warning">Editar</button>
-            <button type="button" class="btn btn-danger">Deletar</button>
+            <button type="button" class="btn btn-danger btn-delete-customer" data-idcustomer="{{this.id}}">Deletar</button>
             <button type="button" class="btn btn-primary">Visualizar</button>
           </td>
         </tr>
