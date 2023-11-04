@@ -14,9 +14,9 @@
 <main class="container">
     <h1 class="text-center pt-2">Clientes</h1>
     <div class="d-flex justify-content-end mb-3">
-      <button type="button" class="btn btn-success">Adicionar</button>
+      <a class="btn btn-success" href="/admin/customers/add" role="button">Adicionar</a>
     </div>
-    <table class="table table-light table-hover table-success table-striped">
+    <table class="table table-bordered table-light table-hover table-success table-striped text-center">
       <thead>
         <tr>
           <th scope="col-1">Código</th>
@@ -34,9 +34,9 @@
           <td>{{this.lastName}}</td>
           <td>{{this.cpf}}</td>
           <td>
-            <button type="button" class="btn btn-warning">Editar</button>
-            <button type="button" class="btn btn-danger btn-delete-customer" data-idcustomer="{{this.id}}">Deletar</button>
-            <button type="button" class="btn btn-primary">Visualizar</button>
+            <button type="button" class="btn btn-warning mb-2">Editar</button>
+            <button type="button" class="btn btn-danger mb-2 btn-delete-customer" data-idcustomer="{{this.id}}">Deletar</button>
+            <button type="button" class="btn btn-primary mb-2">Visualizar</button>
           </td>
         </tr>
       {{/each}}

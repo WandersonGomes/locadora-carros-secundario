@@ -36,6 +36,11 @@ app.set('views', './views');
 //PUBLIC DIRECTORY
 app.use(express.static('public'));
 
+//ROTA PRINCIPAL
+app.use('/', (req, res) => {
+    res.redirect('/auth/login');
+});
+
 app.listen(port, () => {
     console.log(`Servidor está rodando em http://localhost:${port}`);
 });
