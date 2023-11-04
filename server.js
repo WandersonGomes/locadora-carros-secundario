@@ -1,6 +1,7 @@
 const express = require('express');
 const session = require('express-session');
 const flash = require('express-flash');
+const cors = require('cors');
 const { config_session } = require('./config/authentication');
 const { engine } = require('express-handlebars');
 
@@ -9,6 +10,9 @@ const routerDashboard = require('./routers/admin');
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+//CORS
+app.use(cors());
 
 //EXPRESS-FLASH
 app.use(flash());

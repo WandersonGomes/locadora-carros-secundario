@@ -11,6 +11,9 @@ router.get('/dashboard', isAdmin, (req, res) => {
 });
 
 router.get('/customers', isAdmin, async (req, res) => {
+    config_customers_page.msg_error = req.flash('error');
+    config_customers_page.msg_success = req.flash('success');
+
     const customers = await Customer.findAll({
         attributes: ['id', 'name', 'lastName', 'cpf']
     });
@@ -22,10 +25,17 @@ router.get('/customers', isAdmin, async (req, res) => {
     
 });
 
-router.delete('/customers/delete/:id', isAdmin, (req, res) => {
-    req.flash('error', 'mensagem de error');
-    console.log(req.params.id);
-    res.status(200);
+router.delete('/customers/delete/:id', isAdmin, async (req, res) => {
+    const id_customer = req.params.id;
+
+    const result_delete = await Customer.destroy({ where: {id: id_customer}});
+
+    if (result_delete)
+        req.flash('success', 'Cliente excluído com sucesso!');
+    else
+        req.flash('error', 'Error ao excluir Cliente!');
+
+    res.status(200).send('ok');
 });
 
 router.get('/about', isAdmin, (req, res) => {
