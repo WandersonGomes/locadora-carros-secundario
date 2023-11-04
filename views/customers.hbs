@@ -36,7 +36,7 @@
           <td>
             <button type="button" class="btn btn-warning mb-2">Editar</button>
             <button type="button" class="btn btn-danger mb-2 btn-delete-customer" data-idcustomer="{{this.id}}">Deletar</button>
-            <button type="button" class="btn btn-primary mb-2">Visualizar</button>
+            <a class="btn btn-primary mb-2" href="/admin/customers/details/{{this.id}}">Visualizar</a>
           </td>
         </tr>
       {{/each}}

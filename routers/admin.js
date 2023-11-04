@@ -3,7 +3,7 @@ const router = express.Router();
 const { isAdmin } = require('../middlewares/autenticacao');
 const { Customer } = require('../database/models')
 
-const { config_dashboard_page, config_about_page, config_customers_page, config_customers_add_page } = require('../config/pages');
+const { config_dashboard_page, config_about_page, config_customers_page, config_customers_add_page, config_customers_details_page } = require('../config/pages');
 
 router.get('/dashboard', isAdmin, (req, res) => {
     res.render('dashboard', config_dashboard_page);
@@ -65,6 +65,19 @@ router.post('/customers/save', isAdmin, async (req, res) => {
     }
 
     res.redirect('/admin/customers/');
+});
+
+router.get('/customers/details/:id', isAdmin, async (req, res) => {
+    //clear customer previous
+    config_customers_details_page.customer = undefined;
+
+    const customer = await Customer.findOne({ where: {id: req.params.id}});
+    if (customer instanceof Customer) {
+        config_customers_details_page.customer = customer.toJSON();
+    }
+    
+    console.log(config_customers_details_page.customer);
+    res.render('customer-details', config_customers_details_page);
 });
 
 router.get('/about', isAdmin, (req, res) => {

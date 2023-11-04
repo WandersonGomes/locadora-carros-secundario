@@ -25,6 +25,8 @@ const config_customers_page = new ConfigurationPage('Customers', undefined, cust
 const customers_add_page_scripts = [ '/js/customer-add.js' ];
 const config_customers_add_page = new ConfigurationPage('Add Customers', undefined, customers_add_page_scripts);
 
+const config_customers_details_page = new ConfigurationPage('Details Customer');
+
 const config_about_page = new ConfigurationPage('About');
 
 module.exports = {
@@ -32,5 +34,6 @@ module.exports = {
     config_dashboard_page,
     config_about_page,
     config_customers_page,
-    config_customers_add_page
+    config_customers_add_page,
+    config_customers_details_page
 };
