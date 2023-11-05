@@ -3,19 +3,25 @@
 
 <!--Cadastro de Clientes-->
 <div class="container"><br>
-  <h1 class="text-center">Cadastro de Clientes</h1><br>
-  <form class="g-3 needs-validation" action="/admin/customers/create" method="post" novalidate>
+  <h1 class="text-center">Atualização de Cliente</h1><br>
+  <form class="g-3 needs-validation" action="/admin/customers/update" method="post" novalidate>
+    <div class="row">
+      <div class="form-group col-lg-6 col-md-12 mb-2">
+        <label for="id">Código</label>
+        <input type="text" class="form-control" id="id" name="id" value="{{customer.id}}" readonly required>
+      </div>
+    </div>
     <div class="row">
       <div class="form-group col-lg-6 col-md-12 mb-2">
         <label for="name">Nome</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Nome" required>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Nome" value="{{customer.name}}" required>
         <div class="invalid-feedback">
           Por favor preencha este campo!
         </div>
       </div>
       <div class="form-group col-lg-6 col-md-12 mb-2">
         <label for="lastname">Sobrenome</label>
-        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Sobrenome" required>
+        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Sobrenome" value="{{customer.lastName}}" required>
         <div class="invalid-feedback">
           Por favor preencha este campo!
         </div>
@@ -25,14 +31,14 @@
     <div class="row">
       <div class="form-group col-lg-6 col-md-12 mb-2">
         <label for="cpf">CPF:</label>
-        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Informe o CPF" required>
+        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Informe o CPF" value="{{customer.cpf}}" required>
         <div class="invalid-feedback">
           Por favor preencha este campo!
         </div>
       </div>
       <div class="form-froup col-lg-6 col-md-12 mb-2">
         <label for="rg">RG</label>
-        <input type="text" class="form-control" id="rg" name="rg" placeholder="Informe o RG" required>
+        <input type="text" class="form-control" id="rg" name="rg" placeholder="Informe o RG" value="{{customer.rg}}" required>
         <div class="invalid-feedback">
           Por favor preencha este campo!
         </div>
@@ -42,7 +48,7 @@
     <div class="row">
       <div class="form-group col-lg-6 col-md-12 mb-2">
         <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{customer.email}}" required>
         <div class="invalid-feedback">
           Por favor preencha este campo!
         </div>
@@ -52,20 +58,20 @@
     <div class="row">
       <div class="form-group col-md-12 col-lg-6 mb-2">
         <label for="address">Endereço</label>
-        <input type="text" class="form-control" id="address" name="address" placeholder="Rua dos Bobos, nº 0" required>
+        <input type="text" class="form-control" id="address" name="address" placeholder="Rua dos Bobos, nº 0" value="{{customer.address}}" required>
         <div class="invalid-feedback">
           Por favor preencha este campo!
         </div>
       </div>
       <div class="form-group col-md-12 col-lg-6 mb-2">
         <label for="complement">Complemento</label>
-        <input type="text" class="form-control" id="complement" name="complement" placeholder="Apartamento, hotel, casa, etc.">
+        <input type="text" class="form-control" id="complement" name="complement" placeholder="Apartamento, hotel, casa, etc." value="{{customer.complement}}">
       </div>
     </div>
     <div class="row">
       <div class="form-group col-md-12 col-lg-6 mb-2">
         <label for="city">Cidade</label>
-        <input type="text" class="form-control" id="city" name="city" required>
+        <input type="text" class="form-control" id="city" name="city" value="{{customer.city}}" required>
         <div class="invalid-feedback">
           Por favor preencha este campo!
         </div>
@@ -73,7 +79,7 @@
       <div class="form-group col-md-12 col-lg-4 mb-2">
         <label for="state">Estado</label>
         <select id="state" name="state" class="form-control" required>
-          <option value disabled selected>Escolher...</option>
+          <option value="{{customer.state}}" selected>{{customer.state}}</option>
           <option value="AC">Acre</option>
           <option value="AL">Alagoas</option>
           <option value="AP">Amapá</option>
@@ -108,13 +114,12 @@
       </div>
       <div class="form-group col-md-2 mb-2">
         <label for="cep">CEP</label>
-        <input type="text" class="form-control" id="cep" name="cep" required>
+        <input type="text" class="form-control" id="cep" name="cep" value="{{customer.cep}}" required>
         <div class="invalid-feedback">
           Por favor preencha este campo!
         </div>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary mb-2" id="btn-save">Salvar</button>
-    <button type="reset" class="btn btn-warning mb-2">Limpar</button>
+    <button type="submit" class="btn btn-primary mb-2" id="btn-save">Salvar Alterações</button>
   </form>
 </div>
