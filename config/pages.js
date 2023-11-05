@@ -22,6 +22,8 @@ const config_dashboard_page = new ConfigurationPage('Dashboard', dashboard_page_
 const customers_page_scripts = [ '/js/customers.js' ];
 const config_customers_page = new ConfigurationPage('Customers', undefined, customers_page_scripts);
 
+const config_car_page = new ConfigurationPage('Car', undefined, customers_page_scripts);
+
 const customers_add_page_scripts = [ '/js/customer-add.js' ];
 const config_customers_add_page = new ConfigurationPage('Add Customer', undefined, customers_add_page_scripts);
 
@@ -39,5 +41,6 @@ module.exports = {
     config_customers_page,
     config_customers_add_page,
     config_customers_details_page,
-    config_customers_edit_page
+    config_customers_edit_page,
+    config_car_page
 };
