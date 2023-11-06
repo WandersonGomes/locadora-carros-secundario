@@ -5,12 +5,17 @@ const { Car } = require('../database/models');
 const { config_cars_page } = require('../config/pages');
 
 
-router.get('/', async (req, res) => {
 
-    //const car = await Car.findAll();
-    //const carJSON = car.map(car => car.toJSON())
+router.get('/', (req, res)=>{
+    res.render('cars-add    ', config_cars_page);
+})
 
-    res.render('cars-add', config_cars_page);
+router.get('/search', async (req, res) => {
+
+    const car = await Car.findAll();
+    const carJSON = car.map(car => car.toJSON())
+
+    console.log(carJSON)
     
 });
 
@@ -31,12 +36,13 @@ router.post('/create', async (req, res) => {
         codeCla: parseInt(req.body.cla),
         fuel: req.body.combustivel,
         lotacao: parseInt(req.body.lotacao),
-        category: req.body.category,
+        category: req.body.categoria,
         cpfOwner: req.body.cpf,
-        city: req.body.city,
+        city: req.body.cidade,
         opcionais: req.body.opcionais
     };
 
+    console.log(data_form_car)
     const car = await Car.create(data_form_car);
     console.log(car)
 
@@ -48,4 +54,5 @@ router.post('/create', async (req, res) => {
 
     res.redirect('/admin/car/');
 });
+
 module.exports = router
