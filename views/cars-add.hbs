@@ -4,77 +4,75 @@
 <!--Cadastro de veículos-->
 <div class="container pb-3">
     <h1 class="text-center">Cadastro de Veículos</h1><br>
-    <form class="g-3 needs-validation" novalidate>
+    <form class="g-3 needs-validation" action="/admin/cars/create" method="post" novalidate>
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="placa">Placa do Veículo</label>
-                <input type="text" class="form-control" id="placa" required>
+                <input type="text" class="form-control" id="placa" name="placa" required>
             </div>
             <div class="form-group col-md-9">
                 <label for="modelo">Marca/Modelo/Versão</label>
-                <input type="text" class="form-control" id="modelo" required>
+                <input type="text" class="form-control" id="modelo" name="modelo" required>
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="ano">Ano</label>
-                <input type="text" class="form-control" id="ano" required>
+                <input type="text" class="form-control" id="ano" name="ano" required>
             </div>
             <div class="form-group col-md-3">
                 <label for="ano-modelo">Ano Modelo</label>
-                <input type="text" class="form-control" id="ano-modelo"
-                    required>
+                <input type="text" class="form-control" id="ano-modelo" name="anoModelo" required>
             </div>
             <div class="form-group col-md-3">
                 <label for="exercicio">Execício Licenciamento</label>
-                <input type="text" class="form-control" id="exercicio"
-                    required>
+                <input type="text" class="form-control" id="exercicio" name="licenciamento" required>
             </div>
             <div class="form-group col-md-3">
                 <label for="cor">Cor</label>
-                <input type="text" class="form-control" id="cor" required>
+                <input type="text" class="form-control" id="cor" name="cor" required>
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="renavan">Renavan</label>
-                <input type="text" class="form-control" id="renavan" required>
+                <input type="text" class="form-control" id="renavan" name="renavan" required>
             </div>
             <div class="form-group col-md-3">
                 <label for="chassi">Chassi</label>
-                <input type="text" class="form-control" id="chassi" required>
+                <input type="text" class="form-control" id="chassi" name="chassi" required>
             </div>
             <div class="form-group col-md-3">
                 <label for="motor">Motor</label>
-                <input type="text" class="form-control" id="motor" required>
+                <input type="text" class="form-control" id="motor" name="motor" required>
             </div>
             <div class="form-group col-md-3">
                 <label for="crv">Número do CRV</label>
-                <input type="text" class="form-control" id="crv" required>
+                <input type="text" class="form-control" id="crv" name="crv" required>
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="cla">Código de segurança do CLA</label>
-                <input type="text" class="form-control" id="cla" required>
+                <input type="text" class="form-control" id="cla" name="cla" required>
             </div>
             <div class="form-group col-md-3">
                 <label for="combustivel">Combustível</label>
                 <input type="text" class="form-control" id="combustivel"
-                    placeholder="Gasolina, etanol, etc." required>
+                    placeholder="Gasolina, etanol, etc." name="combustivel" required>
             </div>
             <div class="form-group col-md-3">
                 <label for="lotacao">Lotação</label>
                 <input type="text" class="form-control" id="lotacao"
-                    placeholder="Qtde. passageiros" required>
+                    placeholder="Qtde. passageiros" name="lotacao" required>
             </div>
             <div class="form-group col-md-3">
                 <label for="categoria">Categoria</label>
                 <input type="text" class="form-control" id="categoria"
-                    placeholder="Particular, etc." required>
+                    placeholder="Particular, etc." name="categoria" required>
             </div>
         </div>
 
@@ -82,12 +80,12 @@
             <div class="form-group col-md-3">
                 <label for="cpf-proprietario">CPF/CNPJ Proprietário</label>
                 <input type="text" class="form-control" id="cpf-proprietario"
-                    required>
+                   name="cpf" required>
             </div>
             <div class="form-group col-md-9">
                 <label for="nome-proprietario">Nome do Proprietário</label>
                 <input type="text" class="form-control" id="nome-proprietario"
-                    required>
+                  name="nome"  required>
             </div>
         </div>
 
@@ -95,12 +93,12 @@
             <div class="form-group col-md-3">
                 <label for="local">Local</label>
                 <input type="text" class="form-control" id="local"
-                    placeholder="Cidade" required>
+                    placeholder="Cidade" name="cidade" required>
             </div>
             <div class="form-group col-md-9">
                 <label for="opcionais">Opcionais</label>
                 <input type="text" class="form-control" id="opcionais"
-                    placeholder="Vidro elétrico, direção hidráulica, etc." required>
+                    placeholder="Vidro elétrico, direção hidráulica, etc." name="opcionais" required>
             </div>
         </div>
         <button type="reset" class="btn btn-primary">Limpar</button>

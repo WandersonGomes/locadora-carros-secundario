@@ -21,6 +21,8 @@ module.exports = {
         nameOwner: 'LocaCar',
         category: 'Aluguel',
         city: 'City 2',
+        opcionais: 'opcional',
+        lotacao: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -41,6 +43,8 @@ module.exports = {
         nameOwner: 'LocaCar',
         category: 'Aluguel',
         city: 'City 1',
+        opcionais: 'opcional',
+        lotacao: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },

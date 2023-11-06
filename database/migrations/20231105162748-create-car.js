@@ -79,6 +79,13 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      opcionais: {
+        type: Sequelize.STRING,
+      },
+      lotacao: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
