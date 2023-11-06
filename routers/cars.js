@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 const { isAdmin } = require('../middlewares/autenticacao');
 const { Car } = require('../database/models');
-const {config_car_page } = require('../config/pages');
+const { config_cars_page } = require('../config/pages');
 
-//router.use(isAdmin);
+router.use(isAdmin);
 
 router.get('/', async (req, res) => {
 
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     
     console.log(carJSON);
 
-    res.render('teste', config_car_page);
+    res.render('cars', config_cars_page);
     
 });
 
