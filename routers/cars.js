@@ -4,13 +4,13 @@ const { isAdmin } = require('../middlewares/autenticacao');
 const { Car } = require('../database/models');
 const { config_cars_page } = require('../config/pages');
 
-
+router.use(isAdmin);
 
 router.get('/', (req, res)=>{
-    res.render('cars-add    ', config_cars_page);
+    res.render('cars', config_cars_page);
 })
 
-router.get('/search', async (req, res) => {
+router.get('/add', async (req, res) => {
 
     const car = await Car.findAll();
     const carJSON = car.map(car => car.toJSON())
