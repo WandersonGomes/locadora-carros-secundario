@@ -85,6 +85,15 @@ module.exports = (sequelize, DataTypes) => {
     lotacao: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    priceDaily: {
+      type: DataTypes.DOUBLE,
+      allowNull: false,
+    },
+    status: {
+      type: DataTypes.ENUM('enable', 'disable', 'maintenance'),
+      allowNull: false,
+      defaultValue: 'enable'
     }
   }, {
     sequelize,

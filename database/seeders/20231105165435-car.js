@@ -23,6 +23,7 @@ module.exports = {
         city: 'City 2',
         opcionais: 'opcional',
         lotacao: 2,
+        priceDaily: 100.00,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -45,6 +46,7 @@ module.exports = {
         city: 'City 1',
         opcionais: 'opcional',
         lotacao: 1,
+        priceDaily: 100.00,
         createdAt: new Date(),
         updatedAt: new Date(),
       },

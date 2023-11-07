@@ -33,6 +33,8 @@ const config_customers_edit_page = new ConfigurationPage('Edit Customer', undefi
 
 const config_cars_page = new ConfigurationPage('Cars');
 
+const config_cars_details_page = new ConfigurationPage('Details Car');
+
 const config_about_page = new ConfigurationPage('About');
 
 module.exports = {
@@ -43,5 +45,6 @@ module.exports = {
     config_customers_add_page,
     config_customers_details_page,
     config_customers_edit_page,
-    config_cars_page
+    config_cars_page,
+    config_cars_details_page,
 };

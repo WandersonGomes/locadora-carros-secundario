@@ -86,6 +86,15 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
+      priceDaily: {
+        type: Sequelize.DOUBLE,
+        allowNull: false,
+      },
+      status: {
+        type: Sequelize.ENUM('enable', 'disable', 'maintenance'),
+        allowNull: false,
+        defaultValue: 'enable',
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
