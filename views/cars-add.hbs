@@ -2,108 +2,171 @@
 {{> menu}}
 
 <!--Cadastro de veículos-->
-<div class="container pb-3">
+<div class="container pt-3">
     <h1 class="text-center">Cadastro de Veículos</h1><br>
     <form class="g-3 needs-validation" action="/admin/cars/create" method="post" novalidate>
-        <div class="form-row">
-            <div class="form-group col-md-3">
-                <label for="placa">Placa do Veículo</label>
-                <input type="text" class="form-control" id="placa" name="placa" required>
+        <div class="row">
+            
+            <div class="form-group col-lg-3 mb-2">
+                <label for="plate">Placa do Veículo</label>
+                <input type="text" class="form-control" id="plate" name="plate" placeholder="ABC1234" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
             </div>
-            <div class="form-group col-md-9">
-                <label for="modelo">Marca/Modelo/Versão</label>
-                <input type="text" class="form-control" id="modelo" name="modelo" required>
-            </div>
-        </div>
 
-        <div class="form-row">
-            <div class="form-group col-md-3">
+            <div class="form-group col-lg-3 mb-2">
+                <label for="model">Marca/Modelo/Versão</label>
+                <input type="text" class="form-control" id="model" name="model" placeholder="Marca/Modelo/Versao" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
                 <label for="ano">Ano</label>
-                <input type="text" class="form-control" id="ano" name="ano" required>
+                <input type="text" class="form-control" id="year" name="year" placeholder="2023" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
             </div>
-            <div class="form-group col-md-3">
-                <label for="ano-modelo">Ano Modelo</label>
-                <input type="text" class="form-control" id="ano-modelo" name="anoModelo" required>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="year_model">Ano Modelo</label>
+                <input type="text" class="form-control" id="year_model" name="year_model" placeholder="2023" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
             </div>
-            <div class="form-group col-md-3">
-                <label for="exercicio">Execício Licenciamento</label>
-                <input type="text" class="form-control" id="exercicio" name="licenciamento" required>
-            </div>
-            <div class="form-group col-md-3">
-                <label for="cor">Cor</label>
-                <input type="text" class="form-control" id="cor" name="cor" required>
-            </div>
+
         </div>
 
-        <div class="form-row">
-            <div class="form-group col-md-3">
-                <label for="renavan">Renavan</label>
-                <input type="text" class="form-control" id="renavan" name="renavan" required>
+        <div class="row">
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="licensing">Execício Licenciamento</label>
+                <input type="text" class="form-control" id="licensing" name="licensing" placeholder="2023" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
             </div>
-            <div class="form-group col-md-3">
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="color">Cor</label>
+                <input type="text" class="form-control" id="color" name="color" placeholder="Azul" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="renavam">Renavam</label>
+                <input type="text" class="form-control" id="renavam" name="renavam" placeholder="123456789ABC" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
                 <label for="chassi">Chassi</label>
-                <input type="text" class="form-control" id="chassi" name="chassi" required>
+                <input type="text" class="form-control" id="chassi" name="chassi" placeholder="123456789" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
             </div>
-            <div class="form-group col-md-3">
+
+        </div>
+
+        <div class="row">
+            
+            <div class="form-group col-lg-3 mb-2">
                 <label for="motor">Motor</label>
-                <input type="text" class="form-control" id="motor" name="motor" required>
+                <input type="text" class="form-control" id="motor" name="motor" placeholder="2.0" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
             </div>
-            <div class="form-group col-md-3">
+
+            <div class="form-group col-lg-3 mb-2">
                 <label for="crv">Número do CRV</label>
-                <input type="text" class="form-control" id="crv" name="crv" required>
+                <input type="text" class="form-control" id="crv" name="crv" placeholder="1234567" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
             </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="code_cla">Código de segurança do CLA</label>
+                <input type="text" class="form-control" id="code_cla" name="code_cla" placeholder="ABC123" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="fuel">Combustível</label>
+                <input type="text" class="form-control" id="fuel" placeholder="Gasolina, etanol, etc." name="fuel" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
         </div>
 
-        <div class="form-row">
-            <div class="form-group col-md-3">
-                <label for="cla">Código de segurança do CLA</label>
-                <input type="text" class="form-control" id="cla" name="cla" required>
-            </div>
-            <div class="form-group col-md-3">
-                <label for="combustivel">Combustível</label>
-                <input type="text" class="form-control" id="combustivel"
-                    placeholder="Gasolina, etanol, etc." name="combustivel" required>
-            </div>
-            <div class="form-group col-md-3">
-                <label for="lotacao">Lotação</label>
-                <input type="text" class="form-control" id="lotacao"
-                    placeholder="Qtde. passageiros" name="lotacao" required>
-            </div>
-            <div class="form-group col-md-3">
+        <div class="row">
+            
+            <div class="form-group col-lg-3 mb-2">
                 <label for="categoria">Categoria</label>
-                <input type="text" class="form-control" id="categoria"
-                    placeholder="Particular, etc." name="categoria" required>
+                <input type="text" class="form-control" id="category" placeholder="Particular, etc." name="category" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
             </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="cpf_owner">CPF/CNPJ Proprietário</label>
+                <input type="text" class="form-control" id="cpf_owner" name="cpf_owner" placeholder="01.123.456/0001-10" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+            
+            <div class="form-group col-lg-9 mb-2">
+                <label for="name_owner">Nome do Proprietário</label>
+                <input type="text" class="form-control" id="name_owner" name="name_owner" placeholder="Fulano de Tal" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="city">Local</label>
+                <input type="text" class="form-control" id="city" placeholder="Cidade" name="city" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
         </div>
 
-        <div class="form-row">
-            <div class="form-group col-md-3">
-                <label for="cpf-proprietario">CPF/CNPJ Proprietário</label>
-                <input type="text" class="form-control" id="cpf-proprietario"
-                   name="cpf" required>
+        <div class="row">
+            
+            <div class="form-group col-lg-9 mb-2">
+                <label for="optional">Opcionais</label>
+                <input type="text" class="form-control" id="optional" placeholder="Vidro elétrico, direção hidráulica, etc." name="optional">
             </div>
-            <div class="form-group col-md-9">
-                <label for="nome-proprietario">Nome do Proprietário</label>
-                <input type="text" class="form-control" id="nome-proprietario"
-                  name="nome"  required>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="lotacao">Lotação</label>
+                <input type="text" class="form-control" id="capacity" placeholder="Qtde. passageiros" name="capacity" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
             </div>
+
         </div>
 
-        <div class="form-row">
-            <div class="form-group col-md-3">
-                <label for="local">Local</label>
-                <input type="text" class="form-control" id="local"
-                    placeholder="Cidade" name="cidade" required>
-            </div>
-            <div class="form-group col-md-9">
-                <label for="opcionais">Opcionais</label>
-                <input type="text" class="form-control" id="opcionais"
-                    placeholder="Vidro elétrico, direção hidráulica, etc." name="opcionais" required>
-            </div>
-        </div>
-        <button type="reset" class="btn btn-primary">Limpar</button>
-        <button type="submit" class="btn btn-primary">Salvar</button>
-        <script src="../public/js/verificacao-campos.js"></script>
-        <script src="../public/js/limpar-campos.js"></script>
+        <button type="submit" class="btn btn-primary m-2" id="btn-save">Salvar</button>
+        <button type="reset" class="btn btn-warning m-2">Limpar</button>
     </form>
 </div>

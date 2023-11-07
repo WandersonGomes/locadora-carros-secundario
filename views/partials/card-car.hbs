@@ -1,14 +1,20 @@
-<div class="card m-1" style="width: 16rem;">
-  <img class="card-img-top" src="/images/image-car.png" alt="Imagem do carro">
+<div class="card m-2" style="width: 18rem;">
+  <img src="/images/image-car.png" class="card-img-top" alt="Imagem do carro">
   <div class="card-body">
     <h5 class="card-title">{{model}}</h5>
-    Preço da diária: R$ {{priceDaily}} <br>
-    Status: {{status}}
+    <p class="card-text">Preço da diária: R$ {{priceDaily}}</p>
+    <p class="card-text">Status: {{status}}</p>
+    <p class="card-text">Tipo de Combustível: {{fuel}}</p>
   </div>
-  <div class="card-body">
-    <a href="/admin/cars/update/{{id}}" class="card-link">Atualizar</a>
-    <a href="/admin/cars/delete/{{id}}" class="card-link">Deletar</a>
-    <a href="/admin/cars/details/{{id}}" class="card-link">Detalhes</a>
-  </div>
-
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <a href="/admin/cars/update/{{id}}" class="card-link text-warning">Atualizar</a>
+    </li>
+    <li class="list-group-item">
+      <a href="/admin/cars/delete/{{id}}" class="card-link text-danger">Deletar</a>
+    </li>
+    <li class="list-group-item">
+      <a href="/admin/cars/details/{{id}}" class="card-link text-primary">Detalhes</a>
+    </li>
+  </ul>
 </div>

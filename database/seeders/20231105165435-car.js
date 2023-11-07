@@ -11,7 +11,7 @@ module.exports = {
         yearModel: 2022,
         licensing: 1231,
         color: 'Blue',
-        renavan: 987654321,
+        renavam: 987654321,
         chassi: 'CHASSI456',
         motor: "1.5a",
         crv: 54321,
@@ -21,8 +21,8 @@ module.exports = {
         nameOwner: 'LocaCar',
         category: 'Aluguel',
         city: 'City 2',
-        opcionais: 'opcional',
-        lotacao: 2,
+        optional: 'opcional',
+        capacity: 5,
         priceDaily: 100.00,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -34,7 +34,7 @@ module.exports = {
         yearModel: 2020,
         licensing: 1212,
         color: 'Red',
-        renavan: 123456789,
+        renavam: 123456789,
         chassi: 'CHASSI123',
         motor: '2.0f',
         crv: 12345,
@@ -44,8 +44,8 @@ module.exports = {
         nameOwner: 'LocaCar',
         category: 'Aluguel',
         city: 'City 1',
-        opcionais: 'opcional',
-        lotacao: 1,
+        optional: 'opcional',
+        capacity: 4,
         priceDaily: 100.00,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -54,6 +54,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('Car', null, {});
+    await queryInterface.bulkDelete('Cars', null, {});
   }
 };

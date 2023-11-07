@@ -27,6 +27,10 @@ router.get('/', async (req, res) => {
     
 });
 
+router.get('/add', (req, res) => {
+    res.render('customer-add', config_customers_add_page);
+});
+
 router.get('/details/:id', async (req, res) => {
     //clear customer previous
     config_customers_details_page.customer = undefined;
@@ -37,10 +41,6 @@ router.get('/details/:id', async (req, res) => {
     }
     
     res.render('customer-details', config_customers_details_page);
-});
-
-router.get('/add', (req, res) => {
-    res.render('customer-add', config_customers_add_page);
 });
 
 router.post('/create', async (req, res) => {

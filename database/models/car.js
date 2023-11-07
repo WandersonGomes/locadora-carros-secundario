@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    renavan: {
+    renavam: {
       type: DataTypes.INTEGER,
       allowNull: false,
       unique:true,
@@ -72,17 +72,17 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     category: {
-      type: DataTypes.ENUM('Aluguel'),
+      type: DataTypes.ENUM('aluguel'),
       allowNull: false,
     },
     city: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    opcionais: {
+    optional: {
       type: DataTypes.STRING,
     },
-    lotacao: {
+    capacity: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },

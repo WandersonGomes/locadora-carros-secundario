@@ -34,7 +34,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      renavan: {
+      renavam: {
         type: Sequelize.INTEGER,
         allowNull: false,
         unique: true
@@ -59,7 +59,7 @@ module.exports = {
         unique: true
       },
       fuel: {
-        type: Sequelize.ENUM('Gasolina', 'Álcool', 'Flex'),
+        type: Sequelize.ENUM('gasolina', 'alcool', 'flex', 'eletrico'),
         allowNull: false
       },
       cpfOwner: {
@@ -72,17 +72,17 @@ module.exports = {
         allowNull: false
       },
       category: {
-        type: Sequelize.ENUM('Aluguel'),
+        type: Sequelize.ENUM('aluguel'),
         allowNull: false
       },
       city: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      opcionais: {
+      optional: {
         type: Sequelize.STRING,
       },
-      lotacao: {
+      capacity: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
@@ -91,9 +91,9 @@ module.exports = {
         allowNull: false,
       },
       status: {
-        type: Sequelize.ENUM('enable', 'disable', 'maintenance'),
+        type: Sequelize.ENUM('disponivel', 'indisponivel', 'manutencao'),
         allowNull: false,
-        defaultValue: 'enable',
+        defaultValue: 'disponivel',
       },
       createdAt: {
         allowNull: false,
