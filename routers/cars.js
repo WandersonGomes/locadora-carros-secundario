@@ -4,19 +4,21 @@ const { isAdmin } = require('../middlewares/autenticacao');
 const { Car } = require('../database/models');
 const { config_cars_page, config_cars_details_page} = require('../config/pages');
 
-router.use(isAdmin);
 
-router.get('/', (req, res)=>{
-    res.render('cars-add    ', config_cars_page);
+
+router.get('/', async (req, res)=>{
+    const cars = await Car.findAll();
+    const carsJSON = cars.map(car => car.toJSON());
+    config_cars_page.cars = carsJSON;
+
+    res.render('cars', config_cars_page);
 })
 
-router.get('/search', async (req, res) => {
+router.get('/details/:id', async (req, res) => {
+    const car = await Car.findOne({where:{id:req.params.id}});
+    config_cars_details_page.car = car.toJSON();
 
-    const car = await Car.findAll();
-    const carJSON = car.map(car => car.toJSON())
-
-    console.log(carJSON)
-    
+    res.render('cars-details', config_cars_details_page);
 });
 
 router.post('/create', async (req, res) => {
