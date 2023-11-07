@@ -5,6 +5,7 @@ const { Car } = require('../database/models');
 const { 
     config_cars_page,
     config_cars_add_page,
+    config_cars_edit_page,
     config_cars_details_page
 } = require('../config/pages');
 
@@ -25,7 +26,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/add', async (req, res) => {
-    res.render('cars-add', config_cars_add_page);
+    res.render('car-add', config_cars_add_page);
 });
 
 router.post('/create', async (req, res) => {
@@ -60,6 +61,52 @@ router.post('/create', async (req, res) => {
     }
 
     res.redirect('/admin/cars/');
+});
+
+router.get('/edit/:id', async (req, res) => {
+    config_cars_edit_page.car = undefined;
+    const car = await Car.findOne({where: {id: req.params.id}});
+
+    if (car instanceof Car) {
+        config_cars_edit_page.car = car.toJSON();
+    }
+
+    res.render('car-edit', config_cars_edit_page);
+});
+
+router.post('/update', async (req, res) => {
+    const car = await Car.findOne({where: {id: req.body.id}});
+
+    if (car instanceof Car) {
+        car.set({
+            plate: req.body.plate,
+            model: req.body.model,
+            year: req.body.year,
+            yearModel: req.body.year_model,
+            licensing: req.body.licensing,
+            color: req.body.color,
+            renavam: req.body.renavam,
+            chassi: req.body.chassi,
+            motor: req.body.motor,
+            crv: req.body.crv,
+            codeCLA: req.body.code_cla,
+            fuel: req.body.fuel,
+            category: req.body.category,
+            cpfOwner: req.body.cpf_owner,
+            nameOwner: req.body.name_owner,
+            city: req.body.city,
+            optional: req.body.optional,
+            capacity: req.body.capacity,
+            priceDaily: 100.00
+        });
+
+        await car.save();
+        req.flash('success', 'Carro atualizado com sucesso!');
+    } else {
+        req.flash('error', 'Carro não encontrado!');
+    }
+
+    res.status(200).redirect('/admin/cars/');
 });
 
 router.get('/details/:id', async (req, res) => {

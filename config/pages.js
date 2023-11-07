@@ -36,6 +36,9 @@ const config_cars_page = new ConfigurationPage('Cars');
 const cars_add_page_scripts = [ '/js/cars-add.js' ];
 const config_cars_add_page = new ConfigurationPage('Add Car', undefined, cars_add_page_scripts);
 
+const cars_edit_page_scripts = [ '/js/car-edit.js' ];
+const config_cars_edit_page = new ConfigurationPage('Edit Car', undefined, cars_edit_page_scripts);
+
 const config_cars_details_page = new ConfigurationPage('Details Car');
 
 const config_about_page = new ConfigurationPage('About');
@@ -50,5 +53,6 @@ module.exports = {
     config_customers_edit_page,
     config_cars_page,
     config_cars_add_page,
+    config_cars_edit_page,
     config_cars_details_page,
 };

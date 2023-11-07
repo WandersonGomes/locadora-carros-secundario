@@ -1,0 +1,182 @@
+<!-- Menu de opções -->
+{{> menu}}
+
+<!--Cadastro de veículos-->
+<div class="container pt-3">
+    <h1 class="text-center">Cadastro de Veículos</h1><br>
+    <form class="g-3 needs-validation" action="/admin/cars/update" method="post" novalidate>
+        {{#with car}}
+        <div class="row">
+            
+            <div class="form-group col-lg-6 mb-2">
+                <label for="id">Código</label>
+                <input type="text" class="form-control" id="id" name="id" value="{{id}}" readonly required>
+            </div>
+        
+        </div>
+        
+        <div class="row">
+            
+            <div class="form-group col-lg-3 mb-2">
+                <label for="plate">Placa do Veículo</label>
+                <input type="text" class="form-control" id="plate" name="plate" placeholder="ABC1234" value="{{plate}}" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="model">Marca/Modelo/Versão</label>
+                <input type="text" class="form-control" id="model" name="model" placeholder="Marca/Modelo/Versao" value="{{model}}" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="ano">Ano</label>
+                <input type="text" class="form-control" id="year" name="year" placeholder="2023" value="{{year}}" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="year_model">Ano Modelo</label>
+                <input type="text" class="form-control" id="year_model" name="year_model" placeholder="2023" value="{{yearModel}}" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="licensing">Execício Licenciamento</label>
+                <input type="text" class="form-control" id="licensing" name="licensing" placeholder="2023" value="{{licensing}}" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="color">Cor</label>
+                <input type="text" class="form-control" id="color" name="color" placeholder="Azul" value="{{color}}" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="renavam">Renavam</label>
+                <input type="text" class="form-control" id="renavam" name="renavam" placeholder="123456789ABC" value="{{renavam}}" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="chassi">Chassi</label>
+                <input type="text" class="form-control" id="chassi" name="chassi" placeholder="123456789" value="{{chassi}}" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            
+            <div class="form-group col-lg-3 mb-2">
+                <label for="motor">Motor</label>
+                <input type="text" class="form-control" id="motor" name="motor" placeholder="2.0" value="{{motor}}" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="crv">Número do CRV</label>
+                <input type="text" class="form-control" id="crv" name="crv" placeholder="1234567" value="{{crv}}" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="code_cla">Código de segurança do CLA</label>
+                <input type="text" class="form-control" id="code_cla" name="code_cla" placeholder="ABC123" value="{{codeCLA}}" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="fuel">Combustível</label>
+                <input type="text" class="form-control" id="fuel" placeholder="Gasolina, etanol, etc." name="fuel" value="{{fuel}}" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            
+            <div class="form-group col-lg-3 mb-2">
+                <label for="category">Categoria</label>
+                <input type="text" class="form-control" id="category" placeholder="Particular, etc." name="category" value="{{category}}" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="cpf_owner">CPF/CNPJ Proprietário</label>
+                <input type="text" class="form-control" id="cpf_owner" name="cpf_owner" placeholder="01.123.456/0001-10" value="{{cpfOwner}}" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+            
+            <div class="form-group col-lg-9 mb-2">
+                <label for="name_owner">Nome do Proprietário</label>
+                <input type="text" class="form-control" id="name_owner" name="name_owner" placeholder="Fulano de Tal" value="{{nameOwner}}" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="city">Local</label>
+                <input type="text" class="form-control" id="city" placeholder="Cidade" name="city" value="{{city}}" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            
+            <div class="form-group col-lg-9 mb-2">
+                <label for="optional">Opcionais</label>
+                <input type="text" class="form-control" id="optional" placeholder="Vidro elétrico, direção hidráulica, etc." name="optional" value="{{optional}}">
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="capacity">Lotação</label>
+                <input type="text" class="form-control" id="capacity" placeholder="Qtde. passageiros" name="capacity" value="{{capacity}}" required>
+                <div class="invalid-feedback">
+                    Por favor preencha este campo!
+                </div>
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary m-2" id="btn-save">Salvar</button>
+        {{/with}}
+    </form>
+</div>
