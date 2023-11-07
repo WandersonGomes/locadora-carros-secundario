@@ -21,6 +21,17 @@ router.get('/details/:id', async (req, res) => {
     res.render('cars-details', config_cars_details_page);
 });
 
+router.get('/delete/:id', async (req, res) => {
+    const id_car = req.params.id;
+    const result_delete = await Car.destroy({ where: {id: id_car}});
+
+    if(result_delete)
+        res.redirect('/admin/cars/');
+    else
+        console.log('Erro ao ecluir')
+    
+});
+
 router.post('/create', async (req, res) => {
 
     const data_form_car = {
