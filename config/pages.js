@@ -22,7 +22,6 @@ const config_dashboard_page = new ConfigurationPage('Dashboard', dashboard_page_
 const customers_page_scripts = [ '/js/customers.js' ];
 const config_customers_page = new ConfigurationPage('Customers', undefined, customers_page_scripts);
 
-
 const customers_add_page_scripts = [ '/js/customer-add.js' ];
 const config_customers_add_page = new ConfigurationPage('Add Customer', undefined, customers_add_page_scripts);
 
@@ -31,9 +30,10 @@ const config_customers_details_page = new ConfigurationPage('Details Customer');
 const customers_edit_page_scripts = [ '/js/customer-edit.js' ];
 const config_customers_edit_page = new ConfigurationPage('Edit Customer', undefined, customers_edit_page_scripts);
 
-const config_cars_page = new ConfigurationPage('Cars');
+const cars_page_scripts = [ '/js/cars.js' ];
+const config_cars_page = new ConfigurationPage('Cars', undefined, cars_page_scripts);
 
-const cars_add_page_scripts = [ '/js/cars-add.js' ];
+const cars_add_page_scripts = [ '/js/car-add.js' ];
 const config_cars_add_page = new ConfigurationPage('Add Car', undefined, cars_add_page_scripts);
 
 const cars_edit_page_scripts = [ '/js/car-edit.js' ];

@@ -113,18 +113,19 @@ router.get('/details/:id', async (req, res) => {
     const car = await Car.findOne({where:{id:req.params.id}});
     config_cars_details_page.car = car.toJSON();
 
-    res.render('cars-details', config_cars_details_page);
+    res.render('car-details', config_cars_details_page);
 });
 
-router.get('/delete/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     const id_car = req.params.id;
     const result_delete = await Car.destroy({ where: {id: id_car}});
 
-    if(result_delete)
-        res.redirect('/admin/cars/');
+    if (result_delete)
+        req.flash('success', 'Carro excluído com sucesso!');
     else
-        console.log('Erro ao ecluir')
-    
+        req.flash('error', 'Error ao excluir Carro!');
+
+    res.status(200).send('ok');
 });
 
 router.post('/create', async (req, res) => {

@@ -8,13 +8,13 @@
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
-      <a href="/admin/cars/edit/{{id}}" class="card-link text-warning">Atualizar</a>
+      <a href="/admin/cars/edit/{{id}}" class="card-link text-warning cursor-pointer">Atualizar</a>
     </li>
     <li class="list-group-item">
-      <a href="/admin/cars/delete/{{id}}" class="card-link text-danger">Deletar</a>
+      <a class="card-link text-danger btn-delete-car cursor-pointer" href="#" data-idcar="{{id}}">Deletar</a>
     </li>
     <li class="list-group-item">
-      <a href="/admin/cars/details/{{id}}" class="card-link text-primary">Detalhes</a>
+      <a href="/admin/cars/details/{{id}}" class="card-link text-primary cursor-pointer">Detalhes</a>
     </li>
   </ul>
 </div>
