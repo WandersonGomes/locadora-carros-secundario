@@ -1,0 +1,119 @@
+<!-- Menu de opções -->
+{{> menu}}
+
+<!--Aluguel-->
+<form class="g-3 needs-validation" novalidate onsubmit="return validaCPF();">
+    <div class="container mb-4"><br>
+        <h1 class="text-center">Aluguel</h1>
+        <div><!--Inicio Div Cliente-->
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    Informação do Cliente
+                </a>
+            </nav> <br>
+            <div class="row"><!--Nova Linha-->
+                <div class="form-group col-md-6">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" id="nome"
+                        placeholder="Nome"
+                        disabled>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="sobrenome">Sobrenome</label>
+                    <input type="text" class="form-control" id="sobrenome"
+                        placeholder="Sobrenome" disabled>
+                </div>
+            </div><!--Fim Nova Linha-->
+            <div class="row"><!--Nova Linha-->
+                <div class="form-group col-md-6">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" class="form-control" id="cpf"
+                        placeholder="Informe o CPF" required>
+                    <script src="../public/js/validacao-cpf.js"></script>
+                </div>
+                <div class="form-froup col-md-6">
+                    <label for="rg">RG</label>
+                    <input type="text" class="form-control" id="rg"
+                        placeholder disabled>
+                </div>
+            </div><!--Fim Nova Linha-->
+        </div><!--Fim Div Cliente-->
+
+        <div><!--Inicio Div Carro-->
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    Informação do Veículo
+                </a>
+            </nav> <br>
+            <div class="row"><!--Nova Linha-->
+                <div class="form-group col-md-3">
+                    <label for="placa">Placa do Veículo</label>
+                    <input type="text" class="form-control" id="placa" required>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="modelo">Marca/Modelo/Versão</label>
+                    <input type="text" class="form-control" id="modelo" disabled>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="ano">Ano</label>
+                    <input type="text" class="form-control" id="ano" disabled>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="ano-modelo">Ano Modelo</label>
+                    <input type="text" class="form-control" id="ano-modelo"
+                        disabled>
+                </div>
+            </div><!--Fim Nova Linha-->
+            <div class="row"><!--Nova Linha-->
+                <div class="form-group col-md-3">
+                    <label for="renavan">Renavan</label>
+                    <input type="text" class="form-control" id="renavan"
+                        disabled>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="chassi">Chassi</label>
+                    <input type="text" class="form-control" id="chassi" disabled>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="motor">Motor</label>
+                    <input type="text" class="form-control" id="motor" disabled>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="crv">Cor</label>
+                    <input type="text" class="form-control" id="crv" disabled>
+                </div>
+            </div><!--Fim Nova Linha-->
+        </div><!--Fim Div Carro-->
+
+        <div><!--Inicio Div Aluguel-->
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    Informação do Alugel
+                </a>
+            </nav> <br>
+            <div class="row"><!--Nova Linha-->
+                <div class="form-group col-md-3">
+                    <label for="data-inicio">Quantidade Dias</label>
+                    <input type="text" class="form-control" id="data-inicio"
+                        required>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="diaria">Valor da Diária</label>
+                    <input type="text" class="form-control" id="diaria" required>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="total">Total a Pagar</label>
+                    <input type="text" class="form-control" id="total" disabled>
+                </div>
+            </div><!--Fim Nova Linha-->
+        </div><!--Fim Div Aluguel-->
+
+        <div class="mt-3">
+            <button type="reset" class="btn btn-primary">Limpar</button>
+            <button type class="btn btn-primary">Pesquisar</button>
+            <button type="submit" class="btn btn-primary">Alugar</button>
+            <script src="../public/js/verificacao-campos.js"></script>
+            <script src="../public/js/limpar-campos.js"></script>
+        </div>
+    </div>
+</form>

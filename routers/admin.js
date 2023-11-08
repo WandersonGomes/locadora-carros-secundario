@@ -3,6 +3,7 @@ const router = express.Router();
 const { isAdmin } = require('../middlewares/autenticacao');
 const routerCustomer = require('./customers');
 const routerCars = require('./cars');
+const routerRentals = require('./rentals');
 
 const { Customer, Car } = require('../database/models');
 
@@ -10,6 +11,7 @@ const { config_dashboard_page, config_about_page} = require('../config/pages');
 
 router.use('/customers', routerCustomer);
 router.use('/cars', routerCars);
+router.use('/rentals', routerRentals);
 
 router.use(isAdmin);
 
