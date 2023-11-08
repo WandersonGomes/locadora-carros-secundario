@@ -118,4 +118,10 @@ router.delete('/delete/:id', async (req, res) => {
     res.status(200).send('ok');
 });
 
+router.post('/get_customer/:cpf', async (req, res) => {
+    const customer = await Customer.findOne({where: {cpf: req.params.cpf}});
+    
+    res.json(customer.toJSON());
+});
+
 module.exports = router;

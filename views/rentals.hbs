@@ -1,119 +1,126 @@
 <!-- Menu de opções -->
 {{> menu}}
 
-<!--Aluguel-->
-<form class="g-3 needs-validation" novalidate onsubmit="return validaCPF();">
-    <div class="container mb-4"><br>
-        <h1 class="text-center">Aluguel</h1>
-        <div><!--Inicio Div Cliente-->
-            <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand" href="#">
-                    Informação do Cliente
-                </a>
-            </nav> <br>
-            <div class="row"><!--Nova Linha-->
-                <div class="form-group col-md-6">
-                    <label for="nome">Nome</label>
-                    <input type="text" class="form-control" id="nome"
-                        placeholder="Nome"
-                        disabled>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="sobrenome">Sobrenome</label>
-                    <input type="text" class="form-control" id="sobrenome"
-                        placeholder="Sobrenome" disabled>
-                </div>
-            </div><!--Fim Nova Linha-->
-            <div class="row"><!--Nova Linha-->
-                <div class="form-group col-md-6">
-                    <label for="cpf">CPF:</label>
-                    <input type="text" class="form-control" id="cpf"
-                        placeholder="Informe o CPF" required>
-                    <script src="../public/js/validacao-cpf.js"></script>
-                </div>
-                <div class="form-froup col-md-6">
-                    <label for="rg">RG</label>
-                    <input type="text" class="form-control" id="rg"
-                        placeholder disabled>
-                </div>
-            </div><!--Fim Nova Linha-->
-        </div><!--Fim Div Cliente-->
+<main class="container mt-3">
+    <!--Aluguel-->
+    <h1 class="text-center">Aluguel</h1>
 
-        <div><!--Inicio Div Carro-->
-            <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand" href="#">
-                    Informação do Veículo
-                </a>
-            </nav> <br>
-            <div class="row"><!--Nova Linha-->
-                <div class="form-group col-md-3">
-                    <label for="placa">Placa do Veículo</label>
-                    <input type="text" class="form-control" id="placa" required>
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="modelo">Marca/Modelo/Versão</label>
-                    <input type="text" class="form-control" id="modelo" disabled>
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="ano">Ano</label>
-                    <input type="text" class="form-control" id="ano" disabled>
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="ano-modelo">Ano Modelo</label>
-                    <input type="text" class="form-control" id="ano-modelo"
-                        disabled>
-                </div>
-            </div><!--Fim Nova Linha-->
-            <div class="row"><!--Nova Linha-->
-                <div class="form-group col-md-3">
-                    <label for="renavan">Renavan</label>
-                    <input type="text" class="form-control" id="renavan"
-                        disabled>
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="chassi">Chassi</label>
-                    <input type="text" class="form-control" id="chassi" disabled>
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="motor">Motor</label>
-                    <input type="text" class="form-control" id="motor" disabled>
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="crv">Cor</label>
-                    <input type="text" class="form-control" id="crv" disabled>
-                </div>
-            </div><!--Fim Nova Linha-->
-        </div><!--Fim Div Carro-->
+    <!--INFORMACOES DO CLIENTE-->
+    <div class="box-customer">
+        <h2>Informações do Cliente</h2>
 
-        <div><!--Inicio Div Aluguel-->
-            <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand" href="#">
-                    Informação do Alugel
-                </a>
-            </nav> <br>
-            <div class="row"><!--Nova Linha-->
-                <div class="form-group col-md-3">
-                    <label for="data-inicio">Quantidade Dias</label>
-                    <input type="text" class="form-control" id="data-inicio"
-                        required>
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="diaria">Valor da Diária</label>
-                    <input type="text" class="form-control" id="diaria" required>
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="total">Total a Pagar</label>
-                    <input type="text" class="form-control" id="total" disabled>
-                </div>
-            </div><!--Fim Nova Linha-->
-        </div><!--Fim Div Aluguel-->
+        <div class="row">
+            <div class="form-group col-lg-2 mb-2">
+                <label for="id_customer">Código:</label>
+                <input type="text" class="form-control" id="id_customer" name="id_customer" placeholder="Código" readonly>
+            </div>
+            <div class="form-group col-lg-5 mb-2">
+                <label for="name">Nome</label>
+                <input type="text" class="form-control" id="name" placeholder="Nome" readonly>
+            </div>
+            <div class="form-group col-lg-5 mb-2">
+                <label for="lastname">Sobrenome</label>
+                <input type="text" class="form-control" id="lastname" placeholder="Sobrenome" readonly>
+            </div>
+        </div>
 
-        <div class="mt-3">
-            <button type="reset" class="btn btn-primary">Limpar</button>
-            <button type class="btn btn-primary">Pesquisar</button>
-            <button type="submit" class="btn btn-primary">Alugar</button>
-            <script src="../public/js/verificacao-campos.js"></script>
-            <script src="../public/js/limpar-campos.js"></script>
+
+        <div class="row">
+            <div class="form-group col-lg-6 mb-2">
+                <label for="cpf">CPF:</label>
+                <input type="text" class="form-control" id="cpf" placeholder="Informe o CPF">
+            </div>
+            <div class="form-froup col-lg-6 mb-2">
+                <label for="rg">RG</label>
+                <input type="text" class="form-control" id="rg" placeholder="RG" readonly>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-lg-2 mb-2">
+                <button class="btn btn-primary" id="btn-search-customer">Pesquisar</button>
+            </div>
         </div>
     </div>
-</form>
+    <!--INFORMACOES DO CLIENTE-->
+    
+
+    <!--INFORMACOES DO CARRO-->
+    <div class="box-car">
+        <h2>Informações do Veículo</h2>
+
+        <div class="row">
+            <div class="form-group col-lg-2 mb-2">
+                <label for="id_car">Código:</label>
+                <input type="text" class="form-control" id="id_car" name="id_car" placeholder="Código" readonly>
+            </div>
+
+            <div class="form-group col-lg-3 mb-2">
+                <label for="plate">Placa do Veículo:</label>
+                <input type="text" class="form-control" id="plate" placeholder="Placa" required>
+            </div>
+            <div class="form-group col-lg-3 mb-2">
+                <label for="model">Marca/Modelo/Versão:</label>
+                <input type="text" class="form-control" id="model" placeholder="Marca/Modelo/Versão" disabled>
+            </div>
+            <div class="form-group col-lg-2 mb-2">
+                <label for="year">Ano:</label>
+                <input type="text" class="form-control" id="year" placeholder="Ano" disabled>
+            </div>
+            <div class="form-group col-lg-2 mb-2">
+                <label for="year_model">Ano Modelo:</label>
+                <input type="text" class="form-control" id="year_model" placeholder="Ano Modelo" disabled>
+            </div>
+        </div>
+
+        <div class="row"><!--Nova Linha-->
+            <div class="form-group col-lg-3 mb-2">
+                <label for="renavam">Renavam:</label>
+                <input type="text" class="form-control" id="renavam" placeholder="ABC123" readonly>
+            </div>
+            <div class="form-group col-lg-3 mb-2">
+                <label for="chassi">Chassi</label>
+                <input type="text" class="form-control" id="chassi" placeholder="Chassi" readonly>
+            </div>
+            <div class="form-group col-lg-3 mb-2">
+                <label for="motor">Motor</label>
+                <input type="text" class="form-control" id="motor" placeholder="Motor" disabled>
+            </div>
+            <div class="form-group col-lg-3 mb-2">
+                <label for="crv">CRV</label>
+                <input type="text" class="form-control" id="crv" placeholder="crv" readonly>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-lg-2 mb-2">
+                <button class="btn btn-primary" id="btn-search-car">Pesquisar</button>
+            </div>
+        </div>
+    </div>
+    <!--INFORMACOES CARRO-->
+
+    <div class="box-rental"><!--Inicio Div Aluguel-->
+        <h2>Informação do Alugel</h2>
+        <div class="row"><!--Nova Linha-->
+            <div class="form-group col-md-3">
+                <label for="data-inicio">Quantidade Dias</label>
+                <input type="text" class="form-control" id="data-inicio"
+                    required>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="diaria">Valor da Diária</label>
+                <input type="text" class="form-control" id="diaria" required>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="total">Total a Pagar</label>
+                <input type="text" class="form-control" id="total" disabled>
+            </div>
+        </div>
+
+        <div class="row">
+            <button type="reset" class="btn btn-primary col-2">Limpar</button>
+            <button type="submit" class="btn btn-primary col-2" id="btn-rental">Alugar</button>
+        </div>
+    </div>
+</main>

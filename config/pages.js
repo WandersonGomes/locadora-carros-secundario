@@ -39,7 +39,8 @@ const config_cars_add_page = new ConfigurationPage('Add Car', undefined, cars_ad
 const cars_edit_page_scripts = [ '/js/car-edit.js' ];
 const config_cars_edit_page = new ConfigurationPage('Edit Car', undefined, cars_edit_page_scripts);
 
-const config_rentals_page = new ConfigurationPage('Rental');
+const rentals_page_scripts = [ '/js/rental.js' ];
+const config_rentals_page = new ConfigurationPage('Rental', undefined, rentals_page_scripts);
 
 const config_cars_details_page = new ConfigurationPage('Details Car');
 

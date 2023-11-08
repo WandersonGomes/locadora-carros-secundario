@@ -164,4 +164,10 @@ router.post('/create', async (req, res) => {
     res.redirect('/admin/car/');
 });
 
+router.post('/get_car/:plate', async (req, res) => {
+    const car = await Car.findOne({where: {plate: req.params.plate}});
+
+    res.json(car.toJSON());
+});
+
 module.exports = router
