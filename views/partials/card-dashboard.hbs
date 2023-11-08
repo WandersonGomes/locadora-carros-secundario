@@ -1,6 +1,11 @@
-<div class="card border-dark m-3" style="max-width: 18rem;">
-   <div class="card-body text-dark">
-    <h5 class="card-title">{{title}}</h5>
-    <p class="card-text">{{data}}</p>
-  </div>
+<div class="col-md-3">
+    <div class="card text-center mt-5 {{font-color}} rounded shadow" style="{{back}}">
+        <div class="card-body">
+            <h5 class="card-title text-left">{{title}}</h5>
+            <h1 class="card-text display-2">{{data}}</h1>
+        </div>
+        <div class="card-footer" style="border-top: none;">
+            <a href="{{ref}}" class="btn btn-primary">Saiba mais</a>
+        </div>
+    </div>
 </div>

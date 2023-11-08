@@ -2,7 +2,7 @@
 
 <main class="container pt-3">
     <div class="row align-items-center justify-content-center">
-        {{> card-dashboard title = 'Carrros disponiveis' data = amount_cars_enable }}
-        {{> card-dashboard title = 'Número de Clientes' data = amount_customers }}
+        {{> card-dashboard title = 'Carrros disponiveis' data = amount_cars_enable ref="/admin/cars" font-color="text-white" back="background: linear-gradient(to bottom, #411cd3, #2a5298)"}}
+        {{> card-dashboard title = 'Número de Clientes' data = amount_customers ref="/admin/customers" }}
     </div>
 </main>
